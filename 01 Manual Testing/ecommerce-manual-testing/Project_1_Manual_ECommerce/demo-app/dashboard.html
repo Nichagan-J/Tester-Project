@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .product { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center;}
+        button { background: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .header { display: flex; justify-content: space-between; }
+        .cart-btn { background: #ffc107; text-decoration: none; color: black; padding: 10px 15px; border-radius: 4px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Products Dashboard</h2>
+        <a href="cart.html" class="cart-btn">Go to Cart</a>
+    </div>
+    
+    <div id="products-list">
+        <div class="product">
+            <span>Laptop - $999</span>
+            <button onclick="addToCart(1, 'Laptop', 999)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <span>Headphones - $199</span>
+            <button onclick="addToCart(2, 'Headphones', 199)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <span>Mouse - $49</span>
+            <button onclick="addToCart(3, 'Mouse', 49)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

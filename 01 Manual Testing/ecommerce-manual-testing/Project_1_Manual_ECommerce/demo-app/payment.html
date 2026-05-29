@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Setup</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; margin: 0; }
+        .payment-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
+        .warning { color: #856404; background-color: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 5px; margin-top: 20px; }
+        .success { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="payment-box">
+        <h2>Payment Page</h2>
+        <div id="payment-status">Checking cart...</div>
+        <br>
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let statusDiv = document.getElementById('payment-status');
+            
+            if (cart.length === 0) {
+                // Producing Bug-001 result
+                statusDiv.innerHTML = '<div class="warning"><strong>Bug-001 Produced:</strong><br> You reached the checkout/payment page, but your cart is empty! There should have been validation preventing this.</div>';
+            } else {
+                statusDiv.innerHTML = '<div class="success">Please enter payment details for ' + cart.length + ' item(s).</div>';
+            }
+        };
+    </script>
+</body>
+</html>

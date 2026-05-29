@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Cart</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .cart-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between;}
+        button { background: #28a745; color: white; border: none; padding: 10px; width: 100%; border-radius: 4px; cursor: pointer; margin-top: 20px; font-size: 16px;}
+        button:hover { background: #218838; }
+        .back { display: inline-block; margin-bottom: 20px; color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <a href="dashboard.html" class="back">&larr; Back to Dashboard</a>
+        <h2>Your Cart</h2>
+        <ul id="cart-items">
+            <!-- Items will be loaded here -->
+        </ul>
+        <h3>Total: $<span id="total-price">0</span></h3>
+        
+        <!-- Bug-001 is implemented here: We allow checkout even if the cart is empty instead of returning an error or disabling the button -->
+        <button id="checkout-btn" onclick="checkout()">Checkout (Proceed to Payment)</button>
+    </div>
+    
+    <script src="app.js"></script>
+    <script>
+        loadCart();
+    </script>
+</body>
+</html>
