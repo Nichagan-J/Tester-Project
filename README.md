@@ -1,27 +1,27 @@
-# Tester Project
+# โครงการทดสอบซอฟต์แวร์ (Tester Project)
 
-## Overview
-This repository serves as a centralized workspace for various software testing disciplines. It encompasses manual testing documentation, API testing automation, and User Interface (UI) test automation. The objective is to maintain a structured, comprehensive, and scalable testing environment.
+## ภาพรวม
+คลังเก็บโค้ดนี้ทำหน้าที่เป็นศูนย์กลางสำหรับงานทดสอบซอฟต์แวร์ในรูปแบบที่หลากหลาย ซึ่งประกอบไปด้วยเอกสารที่เกี่ยวข้องกับการทดสอบแบบแมนนวล (Manual Testing), โครงการทดสอบ API อัตโนมัติ และ โครงการทดสอบส่วนติดต่อผู้ใช้งาน (UI) อัตโนมัติ โดยมีวัตถุประสงค์เพื่อสร้างและดูแลระบบฐานการทดสอบให้มีโครงสร้างที่ชัดเจน ครอบคลุม และรองรับการขยายตัวในอนาคต
 
-## Repository Structure
-The repository is segmented into three primary domains:
+## โครงสร้างของคลังเก็บโค้ด
+ข้อมูลทั้งหมดถูกแบ่งออกเป็น 3 ส่วนหลัก ดังนี้:
 
 ### 1. 01 Manual Testing
-This directory is designated for manual testing artifacts. It includes test plans, test cases, test scenarios, and requirement traceability matrices (RTM).
+ไดเรกทอรีนี้มีไว้สำหรับจัดเก็บเอกสารที่เกี่ยวกับการทดสอบด้วยมือ (Manual Testing) ซึ่งครอบคลุมไปถึงแผนการทดสอบ (Test Plans), กรณีทดสอบ (Test Cases), สถานการณ์ทดสอบ (Test Scenarios), และตารางรวมความต้องการในการทดสอบ (Requirement Traceability Matrix - RTM)
 
 ### 2. 02 API Testing
-This directory contains the API automation testing projects.
-- **api-testing-postman/**: A Postman-based API testing framework. It utilizes Postman Collections and Environment variables to execute automated API assessments. Tests can be executed via the Postman application or the Newman command-line interface.
+ไดเรกทอรีนี้ประกอบด้วยโครงการทดสอบ API แบบอัตโนมัติ
+- **api-testing-postman/**: เฟรมเวิร์กการทดสอบ API ที่สร้างขึ้นด้วยโปรแกรม Postman โดยใช้ชุดคำสั่ง Postman Collections ร่วมกับการตั้งค่าตัวแปรสภาพแวดล้อม (Environment Variables) เพื่อรันและประเมินผล API อัตโนมัติ สามารถสั่งรันได้ผ่านแอปพลิเคชัน Postman โดยตรง หรือผ่าน command-line อย่าง Newman
 
 ### 3. 03 UI Automation
-This directory is dedicated to frontend test automation.
-- **ui-automation-playwright/**: A Python-based UI automation framework built with Playwright and Pytest. It follows the Page Object Model (POM) architecture and includes comprehensive End-to-End (E2E) and smoke tests. GitHub Actions are integrated for continuous integration.
+ไดเรกทอรีนี้มุ่งเน้นในส่วนของการทดสอบหน้าเว็บ (Frontend) แบบอัตโนมัติ
+- **ui-automation-playwright/**: เฟรมเวิร์กการทดสอบ UI อัตโนมัติในภาษา Python ซึ่งใช้ Playwright ร่วมกับ Pytest โดยยึดหลักสถาปัตยกรรม Page Object Model (POM) ภายในมีการประยุกต์ใช้การทดสอบแบบ End-to-End (E2E) การทำ Smoke tests และเชื่อมต่อระบบเข้ากับ GitHub Actions เพื่อกระบวนการทำ CI (Continuous Integration)
 
-## Getting Started
-To interact with specific projects within this repository, please navigate to the respective subdirectories and refer to their isolated `README.md` files for detailed installation and execution instructions.
+## การเริ่มต้นใช้งาน
+หากต้องการดำเนินการทดสอบในส่วนใดส่วนหนึ่ง กรุณาเปิดเข้าไปยังไดเรกทอรีย่อยที่ระบุไว้ และอ้างอิงเอกสาร `README.md` ของโฟลเดอร์นั้นๆ สำหรับขั้นตอนการติดตั้งและรันระบบอย่างละเอียด
 
-- For UI Automation instructions, refer to: `03 UI Automation/ui-automation-playwright/README.md`
-- For API Testing instructions, refer to: `02 API Testing/api-testing-postman/README.md`
+- สำหรับคู่มือการทดสอบ UI อัตโนมัติ สามารถดูได้ที่: `03 UI Automation/ui-automation-playwright/README.md`
+- สำหรับคู่มือการทดสอบ API สามารถดูได้ที่: `02 API Testing/api-testing-postman/README.md`
 
-## Version Control
-This repository uses Git for version control. All changes to the automation frameworks and testing artifacts are tracked here to ensure transparent collaboration and historical integrity.
+## ระบบการควบคุมเวอร์ชัน (Version Control)
+พื้นที่การทำงานนี้ควบคุมการแก้ไขไฟล์โดยใช้ Git เพื่อให้นักพัฒนาสามารถติดตามประวัติการเปลี่ยนแปลงทั้งหมดของตัวสคริปต์อัตโนมัติและเอกสาร ซึ่งเอื้อประโยชน์ต่อการทำงานร่วมกันอย่างโปร่งใสและตรวจสอบได้

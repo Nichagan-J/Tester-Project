@@ -1,72 +1,72 @@
-# UI Automation with Playwright and Pytest
+# การทดสอบ UI อัตโนมัติด้วย Playwright และ Pytest
 
-## Overview
-This repository contains the UI Automation testing framework developed using Python, Playwright, and Pytest. It is designed to perform End-to-End (E2E) and Regression testing on web applications. The framework strictly adheres to the Page Object Model (POM) design pattern to ensure maintainability, readability, and scalability of the test scripts.
+## ภาพรวม
+คลังเก็บโค้ดนี้ประกอบด้วยเฟรมเวิร์กการทดสอบ UI อัตโนมัติที่พัฒนาขึ้นโดยใช้ Python, Playwright และ Pytest ออกแบบมาเพื่อดำเนินการทดสอบแบบ End-to-End (E2E) และ Regression สำหรับแอปพลิเคชันบนเว็บ เฟรมเวิร์กนี้ใช้รูปแบบการออกแบบโค้ดแบบ Page Object Model (POM) อย่างเคร่งครัด เพื่ออำนวยความสะดวกในการบำรุงรักษา ความยืดหยุ่น และเพื่อให้สคริปต์ทดสอบสามารถอ่านทำความเข้าใจได้ง่าย
 
-## Project Structure
-The project is organized into the following directory structure:
+## โครงสร้างโปรเจกต์
+โปรเจกต์มีการจัดระเบียบโครงสร้างไดเรกทอรีดังต่อไปนี้:
 
-- **.github/workflows/**: Contains the continuous integration (CI) configuration for GitHub Actions.
-- **fixtures/**: Houses test configurations and test data (e.g., test-data.json).
-- **pages/**: Contains Page Object classes representing different pages of the web application.
-- **reports/**: The output directory for generated HTML test reports.
-- **tests/**: Contains the actual test scripts.
-  - **e2e/**: End-to-End test scenarios.
-  - **regression/**: Regression and smoke test scenarios.
-- **conftest.py**: Pytest configuration file for defining globally accessible fixtures.
-- **playwright_config.py**: Core configuration parameters such as environment variables and base URLs.
-- **pytest.ini**: Default runtime arguments and configurations for Pytest.
-- **requirements.txt**: List of Python dependencies required to run the project.
+- **.github/workflows/**: ประกอบด้วยการตั้งค่าระบบ Continuous Integration (CI) สำหรับ GitHub Actions
+- **fixtures/**: จัดเก็บการตั้งค่าการทดสอบและข้อมูลที่ใช้ในการทดสอบ (ตัวอย่างเช่น test-data.json)
+- **pages/**: ประกอบด้วยคลาสของ Page Object ซึ่งทำหน้าที่เป็นตัวแทนของแต่ละหน้าจอในแอปพลิเคชันบนเว็บ
+- **reports/**: ไดเรกทอรีสำหรับส่งออกรายงานการทดสอบในรูปแบบ HTML
+- **tests/**: ประกอบด้วยสคริปต์ที่ใช้สำหรับรันการทดสอบจริง
+  - **e2e/**: สถานการณ์ทดสอบแบบ End-to-End
+  - **regression/**: สถานการณ์ทดสอบ Regression และ Smoke test
+- **conftest.py**: ไฟล์ตั้งค่าของ Pytest สำหรับกำหนด fixtures ที่สามารถเรียกใช้ได้จากทุกที่
+- **playwright_config.py**: พารามิเตอร์การตั้งค่าหลัก เช่น ตัวแปรสภาพแวดล้อม และ URL หลัก
+- **pytest.ini**: ข้อกำหนดการตั้งค่าและอาร์กิวเมนต์แบบเริ่มต้นสำหรับการรัน Pytest
+- **requirements.txt**: รายชื่อไลบรารีของ Python ที่จำเป็นสำหรับการรันโปรเจกต์
 
-## Prerequisites
-Before setting up the project, ensure that the following software is installed on your system:
-- Python 3.11 or higher
-- pip (Python package installer)
+## สิ่งที่ต้องเตรียมพร้อม
+ก่อนที่จะเริ่มติดตั้งโปรเจกต์ โปรดตรวจสอบให้แน่ใจว่าเครื่องคอมพิวเตอร์ของคุณมีการติดตั้งซอฟต์แวร์ดังต่อไปนี้:
+- Python เวอร์ชัน 3.11 หรือสูงกว่า
+- pip (ตัวจัดการแพ็กเกจของ Python)
 - Git
 
-## Installation Guide
-1. Navigate to the project directory:
+## คู่มือการติดตั้ง
+1. เปลี่ยนไดเรกทอรีเข้าไปยังตำแหน่งของโปรเจกต์:
    ```bash
    cd "03 UI Automation/ui-automation-playwright"
    ```
 
-2. Install the required Python dependencies:
+2. ติดตั้งไลบรารีของ Python ที่จำเป็น:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Install Playwright browsers and dependencies:
+3. ติดตั้งเบราว์เซอร์ของ Playwright และส่วนที่เกี่ยวข้อง:
    ```bash
    playwright install
    ```
 
-## Test Execution
-The framework uses Pytest as the test runner. Default configurations are already specified in the `pytest.ini` file.
+## การรันคำสั่งทดสอบ
+เฟรมเวิร์กนี้ใช้ Pytest เป็นเครื่องมือสำหรับการรันเทสต์ โดยได้มีการตั้งค่าเริ่มต้นไว้ในไฟล์ `pytest.ini` เรียบร้อยแล้ว
 
-- **Run all tests**:
+- **รันการทดสอบทั้งหมด**:
   ```bash
   pytest
   ```
 
-- **Run tests in headed mode (visible browser window)**:
+- **รันการทดสอบแบบเปิดหน้าต่างเบราว์เซอร์ (Headed mode)**:
   ```bash
   pytest --headed
   ```
 
-- **Run a specific test file**:
+- **รันการทดสอบเฉพาะไฟล์ที่กำหนด**:
   ```bash
   pytest tests/e2e/test_login.py
   ```
 
-- **Run tests concurrently (requires pytest-xdist)**:
+- **รันการทดสอบแบบคู่ขนาน (ต้องการไลบรารี pytest-xdist เพิ่มเติม)**:
   ```bash
   pytest -n auto
   ```
 
-## Reporting
-The framework is configured to generate a self-contained HTML report automatically after every test execution. 
-- The report is saved to `reports/report.html`.
-- In the event of a test failure, screenshots, videos, and trace files are automatically captured and attached to the report for debugging purposes.
+## การรายงานผล
+เฟรมเวิร์กได้ถูกตั้งค่าให้สร้างรายงานผลการทดสอบเป็นไฟล์ HTML ให้อัตโนมัติหลังจากการรันเทสต์เสร็จสิ้น
+- ระบบจะบันทึกรายงานไว้ที่ `reports/report.html`
+- ในกรณีที่การทดสอบไม่ผ่าน (Failure) ระบบจะทำการบันทึกภาพหน้าจอ วิดีโอ และไฟล์ Trace ให้อัตโนมัติ พร้อมทั้งแนบไปกับรายงานการทดสอบเพื่อความสะดวกในการวิเคราะห์และแก้ไขปัญหา
 
-## Continuous Integration
-This project integrates with GitHub Actions. The workflow is located at `.github/workflows/playwright.yml`. It is triggered automatically upon push or pull request events to the main branch. The CI pipeline executes the complete test suite and uploads the HTML report as an artifact accessible directly from the GitHub interface.
+## การบูรณาการอย่างต่อเนื่อง (Continuous Integration)
+โปรเจกต์นี้ทำงานร่วมกับระบบ GitHub Actions โดยรายละเอียดขั้นตอนการทำงานถูกระบุไว้ที่ `.github/workflows/playwright.yml` ซึ่งจะทำงานอัตโนมัติเมื่อมีการรับคำสั่ง push หรือ pull request เข้าสู่ branch หลัก ไปป์ไลน์ CI จะทำการรันสคริปต์ทดสอบทั้งหมดและส่งรายงาน HTML ออกมาเป็น Artifact ซึ่งสามารถดาวน์โหลดได้จากหน้าเว็บไซต์ของ GitHub โดยตรง
