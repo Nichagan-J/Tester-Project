@@ -1,0 +1,4 @@
+node_modules/
+reports/newman-report.html
+reports/newman-result.json
+.DS_Store
